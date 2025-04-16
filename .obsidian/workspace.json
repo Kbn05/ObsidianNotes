@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Q.A/Introduction/Introduction.md",
+                "file": "Q.A/Sprint 1/Q.A Engineering.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Introduction"
+              "title": "Q.A Engineering"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#Chapter2",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -161,7 +161,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -176,9 +176,23 @@
   },
   "active": "cb44f968a8ba57f0",
   "lastOpenFiles": [
+    "Q.A/Sprint 1/test-info.png",
+    "Q.A/Sprint 1/test-case4-sol.png",
+    "test-case4-sol.png",
+    "Q.A/Sprint 1/test-case4.png",
+    "Q.A/Sprint 1/test-case3-sol.png",
+    "Q.A/Sprint 1/test-case3.png",
+    "Q.A/Sprint 1/test-case2-sol.png",
+    "Q.A/Sprint 1/test-case2.png",
+    "Q.A/Sprint 1/test-case1-sol.png",
+    "Q.A/Sprint 1/test-case1.png",
+    "Q.A/Webinars/15-04-2025.md",
+    "Q.A/Sprint 1/Q.A Engineering.md",
+    "Q.A/Webinars",
+    "Q.A/Sprint 1/checklist-ex.png",
+    "Q.A/Sprint 1/SDLC.png.crdownload",
     "Q.A/Introduction/Introduction.md",
-    "Q.A/Introduction/s-o 1.png",
-    "Q.A/Introduction/s-o.png",
+    "Q.A/Sprint 1",
     "Some Stuff",
     "Recipes/Pollo-Carne tostada.md",
     "Recipes/Lasaña.md",
@@ -197,23 +211,12 @@
     "Docker",
     "kotlin + python/pythonBackend/Django.md",
     "Java-Spring/Spring.md",
-    "Java-Spring/Pasted image 20240828171016.png",
     "Java-Spring/Java Basics.md",
-    "Pasted image 20240714192749.png",
-    "Pasted image 20240714183952.png",
-    "Pasted image 20240714183847.png",
-    "Pasted image 20240712193827.png",
-    "Java-Spring/Pasted image 20240620120750.png",
     "Recipes",
-    "Pasted image 20240620122638.png",
-    "Java-Spring/Pasted image 20240510181322.png",
     "AWS/Introduction.md",
     "AWS",
     "Flutter notes/Class Notes.md",
-    "Java-Spring",
     "Flutter notes/GoogleMaps API.md",
-    "NodeJS + frameworks",
-    "Flutter notes",
     "Pentesting/Simple CTF/Walkthrough.md",
     "Pentesting/CrackTheHash/Walkthrough.md",
     "Pentesting/Basic pentesting/Walkthrough.md",
