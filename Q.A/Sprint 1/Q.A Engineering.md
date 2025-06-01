@@ -155,7 +155,6 @@ Un informe de errores contiene varias secciones llamadas campos. Algunos son obl
 | Condición previa       | Se indica cuando el sistema necesita preparación antes de la prueba                         |
 | Condición posterior    | Se indica si es necesario devolver el sistema al estado original tras las pruebas           |
 
-
 ***Ejemplo
 
 **ABUG-3:** La función de geolocalización precisa no se puede apagar después de su primera activación.
@@ -328,7 +327,6 @@ Hablemos un poco más sobre el estado "Omitida". Podemos asignar este estado cua
 
 #### Caso de prueba vs lista de comprobación
 
-
 | Caso de prueba                                                        | Lista de comprobación                       |
 | --------------------------------------------------------------------- | ------------------------------------------- |
 | Valida cada elemento de la lista de comprobación                      | Una lista de elementos que necesitan probar |
@@ -341,6 +339,8 @@ Los casos de prueba deben ser fáciles de entender, por lo que debe tener estruc
 ***Consejos para redactar casos de prueba
 
 **Diseñar una sola comprobación por prueba**: Diseñar un caso de prueba con un resultado esperado. Conforme más experiencia, se podrán combinar varias comprobaciones en un solo caso de prueba.
+
+***Nota: Habrán casos donde los testers se equivocarán y agregarán más de un resultado, en caso que sea posible ejecutar la prueba, deberá cumplir con todos resultados esperados para ser aprobado, o será no aprobado.
 
 **Un caso de prueba, un dato de prueba**: Los datos de prueba son los datos que necesitas durante la ejecución de la prueba. Puedes utilizar un conjunto de datos de prueba para un caso de prueba, porque sería específico para ese caso de prueba. 
 
@@ -424,6 +424,8 @@ Por ejemplo, necesitas verificar que puedes eliminar una tarjeta que ya habías 
 
 **Resultado esperado**: Se guarda la respuesta.
 
+***Nota: En los casos de prueba siempre se deben exponer al detalle los datos específicos. Por ejemplo, al decir que se inició sesión con un usuario válido, deben agregarse los datos concretos de usuario y contraseña con los que se logueo.
+
 ### Errores comunes al escribir casos de prueba
 
 - **El caso de prueba no cuenta con datos de prueba.**
@@ -494,4 +496,101 @@ Sin embargo, los QA engineers a menudo crean informes menos detallados. En estos
 | AR-3 | Eliminar una tarjeta         | Aprobado |
 
 ***Si se hubiera detectado algún error, habrías tenido que crear un informe de errores. Para ahorrar tiempo, una buena práctica sería señalar el ID, el título y la prioridad del correspondiente informe de errores junto al ID del caso de prueba en el informe de resumen de pruebas.
+
+### Pruebas de humo
+
+Consisten en comprobar que las partes principales de una aplicación funcionan de acuerdo a lo descrito en la documentación. ==**Deben ser a servicios críticos del sistema.**==
+
+Las pruebas de humo son necesarias cuando:
+
+- **La aplicación se ha modificado muy ligeramente:** si solo se han actualizado funciones menores (un nuevo fondo para los botones, una nueva etiqueta, etc.), solo necesitas efectuar unas cuantas pruebas de humo.
+- **No hay tiempo para realizar pruebas más exhaustivas:** a veces, hay tanta presión con los tiempos de entrega que un proyecto debe enviarse en su estado actual. Las pruebas de humo nos ayudarán a asegurarnos de que la aplicación funciona.
+
+### Pruebas de regresión
+
+Estas se utilizan para verificar que todos los elementos existentes de una aplicación trabajan de la misma forma en que lo hacían previo a una actualización. En otras palabras, comprueban que nada haya dejado de funcionar como resultado de nuevos cambios. ==**Las pruebas de regresión también deben cubrir funciones no esenciales.**==
+
+Las pruebas de regresión generalmente involucran todo un conjunto de pruebas. De hecho, las pruebas de humo son solo una parte de las pruebas de regresión. Sin embargo, es importante recordar que las pruebas de regresión no son las pruebas que se llevan a cabo "inicialmente" (de otra forma, no existiría la posibilidad de regresión). Durante las pruebas de regresión, el equipo de testers primero realiza pruebas de humo para comprobar que los elementos principales de la aplicación funcionan como deben. Después de ello, pueden efectuar el resto de las pruebas.
+
+#Chapter6 
+### Práctica Sprint 1
+
+Estas son las listas de comprobación resultantes:
+
+**Crear una tarjeta**
+
+- Es imposible crear una tarjeta sin nombre.
+- Es posible crear una tarjeta sin descripción si el resto de los campos están completados correctamente.
+- Los nombres de las tarjetas nuevas no pueden tener 2 o menos caracteres.
+- Al crear una tarjeta, debe especificarse la disponibilidad del lugar (una propiedad pública o privada).
+- No es posible crear una tarjeta que tenga una imagen sin su correspondiente enlace.
+- Al hacer clic en la X, se redirige al usuario a la página principal y la tarjeta no se crea.
+
+**Visualizar y eliminar una tarjeta**
+
+- El logotipo del servicio "Around" no se utiliza como imagen de relleno en una tarjeta con una imagen que no está disponible.
+- Se puede cerrar la ventana con los detalles de la tarjeta haciendo clic en la X.
+- El botón para eliminar una tarjeta solo está disponible para las tarjetas creadas por el usuario.
+- La ventana para visualizar los detalles de las tarjetas tiene una imagen grande, el nombre del lugar debajo de la tarjeta y una descripción del sitio debajo del nombre.
+- Hacer clic en una tarjeta en la página principal hace que se abra una ventana nueva con los detalles de la tarjeta.
+
+### Crear caso de prueba
+
+Este es el caso de prueba resultante con los pasos correctos:
+
+**ID:** TRIPLETEN-1 **Título**: Crear una nueva tarjeta
+
+**Condición previa:**
+
+1. Abrir Google Chrome (en la versión 70 o posterior) en modo incógnito en tu computadora.
+2. Abrir el sitio web de "Around" siguiendo el enlace [https://around.nm.tripleten-services.com/signin?lng=es](https://around.nm.tripleten-services.com/signin?lng=es).
+3. Iniciar sesión con tu nombre de usuario y contraseña.
+
+**Pasos**:
+
+1. Presionar el botón "+".
+2. Escribir el nombre "Puente Ha'penny".
+3. Pegar “[https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/qa-sprint-1/esp/v5/HalfPennyBridge.jpg](https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/qa-sprint-1/esp/v5/HalfPennyBridge.jpg)” en el campo "Enlace a la imagen".
+4. Escribir "Dublín, Irlanda" en el campo "Dirección".
+5. Comprobar "Propiedad pública".
+6. Hacer clic en "Guardar".
+
+**Resultado esperado**: Se crea una nueva tarjeta y es visible para el usuario, el nombre de la tarjeta es "Puente Ha'penny" y la imagen se muestra dentro de la tarjeta.
+
+**ID:** TRIPLETEN-2
+
+**Título**: Cómo visualizar los detalles de una tarjeta
+
+**Condición previa:**
+
+1. Abrir Google Chrome (en la versión 70 o posterior) en modo incógnito en tu computadora.
+2. Abrir el sitio web de "Around" siguiendo el enlace: [https://around.nm.tripleten-services.com/signin?lng=es](https://around.nm.tripleten-services.com/signin?lng=es).
+3. Iniciar sesión con tu nombre de usuario y contraseña.
+
+**Pasos**:
+
+1. Hacer clic en la tarjeta "Gran Cañón".
+
+**Resultado esperado**: El nombre y la descripción del lugar y la versión amplia de la imagen se muestran en la pantalla, el botón "X" está presente.
+
+**ID:** TRIPLETEN-3
+
+**Título**: Eliminar una tarjeta
+
+**Condición previa:**
+
+1. Abrir Google Chrome (en la versión 70 o posterior) en modo incógnito en tu computadora.
+2. Abrir el sitio web de "Around" siguiendo el enlace:[https://around.nm.tripleten-services.com/signin?lng=es](https://around.nm.tripleten-services.com/signin?lng=es).
+3. Iniciar sesión con tu nombre de usuario y contraseña.
+
+**Pasos**:
+
+1. Presionar el botón "+".
+2. Completar todos los campos con cualquier dato válido.
+3. Comprobar "Propiedad pública".
+4. Hacer clic en "Guardar".
+5. Pasar el cursor sobre la tarjeta recién creada.
+6. Hacer clic en el ícono de la papelera.
+
+**Resultado esperado**: La tarjeta está eliminada y es invisible para el usuario.
 
