@@ -11,14 +11,13 @@
             "id": "cb44f968a8ba57f0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "diff-view",
               "state": {
-                "file": "Q.A/Sprint 2/Diseño de pruebas.md",
-                "mode": "source",
-                "source": false
+                "file": "Q.A/Webinars/15-04-2025.md",
+                "staged": true
               },
-              "icon": "lucide-file",
-              "title": "Diseño de pruebas"
+              "icon": "git-pull-request",
+              "title": "Diff View (15-04-2025)"
             }
           }
         ]
@@ -176,6 +175,7 @@
   },
   "active": "cb44f968a8ba57f0",
   "lastOpenFiles": [
+    "Q.A/Sprint 2/Diseño de pruebas.md",
     "Q.A/Sprint 1/Q.A Engineering.md",
     "kotlin + python/Kotlin/Untitled.md",
     "Git-GitHub/SetUp.md",
@@ -196,7 +196,6 @@
     "Q.A/Sprint 3/http-structureQuery.png",
     "Q.A/Sprint 3/url-est.png",
     "Q.A/Sprint 3/checklist-sprint3.png",
-    "Q.A/Sprint 2/Diseño de pruebas.md",
     "Q.A/Sprint 3",
     "Q.A/Sprint 2/testcase-full-data.png",
     "Q.A/Sprint 2/testcase-data-chart.png",
